@@ -30,7 +30,7 @@ if uploaded_file is not None:
                     st.write(f"✅ PDF Read: {len(reader.pages)} pages")
 
                     genai.configure(api_key=api_key)
-                    model = genai.GenerativeModel("gemini-2.0-flash")
+                    model = genai.GenerativeModel("gemini-2.5-flash")
                     prompt = f"""Summarize this DSU circular in EXACTLY 5 bullet points.
                     Make it simple for students. Include: What is it about, Last Date, Who is eligible, What to do, Where to submit.
                     At end, add Source: Uploaded Circular PDF.
@@ -71,7 +71,7 @@ if question:
         answer = "Please enter API Key in sidebar."
     else:
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel("gemini-2.0-flash")
+        model = genai.GenerativeModel("gemini-2.5-flash")
         prompt = f"You are DSU Assistant. Answer from context: {DSU_DOCS}. Question: {question}. Give 5 bullet points and cite Source: DSU Document"
         answer = model.generate_content(prompt).text
     st.session_state.messages.append({"role": "assistant", "content": answer})
