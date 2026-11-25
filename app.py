@@ -5,7 +5,7 @@ import google.generativeai as genai
 # --- CONFIG ---
 st.set_page_config(page_title="DSU Campus GenAI Assistant", page_icon="🎓")
 st.title("🎓 DSU Campus GenAI Assistant")
-st.write("Ask anything about DSU - Syllabus, Exams, Fees, Placements | By Barsharani Patra")
+st.write("Ask anything about DSU - Syllabus, Exams, Fees, Placements")
 
 # --- SIDEBAR ---
 api_key = st.sidebar.text_input("Enter Gemini API Key", type="password")
